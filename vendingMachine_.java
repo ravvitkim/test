@@ -116,6 +116,7 @@ public class vendingMachine_ {
                     }
                     break;
                 case 2:
+                    System.out.println("금액을 추가해주세요.");
                     int addMoney = sc.nextInt();
                     System.out.println("금액이 추가 되었습니다! 잔액:"+ (addMoney+lastPrice));
                     mainMenu();
