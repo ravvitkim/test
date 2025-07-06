@@ -13,7 +13,7 @@ public class vendingMachine_ {
     static int[] stock = new int[COUNT];//재고
     static int[] sales = new int[COUNT]; // 판매금액
     static int lastPrice = 0;
-    static  int choice = 0;
+    static int choice = 0;
 
     static void dataInitialize(){
         product[0] = "coke";
@@ -44,14 +44,13 @@ public class vendingMachine_ {
 //            System.out.println("1:제품1(100W)-3개 2:제품2-1개 3:제품3-1개");
             System.out.println("=================");
             System.out.println("돈을 넣어주세요");
-            int choice = sc.nextInt();
+            choice = sc.nextInt();
             //1004인 경우 관리자 메뉴로 갑니다.
             if (choice == 1004){
                 admin();
             }else if (choice<500){
                 System.out.println("다시입력");
             }else {
-                lastPrice += choice;
                 userMenu();
             }
         }
@@ -67,11 +66,9 @@ public class vendingMachine_ {
     private static void userMenu() {
         //System.out.println("사용자 페이지");
         int num = 0;
-
         while (true){
             System.out.println("메뉴입력:");
             num = sc.nextInt();
-
             switch (num) {
                 case 1:
                     if (choice>=500) {
@@ -101,7 +98,7 @@ public class vendingMachine_ {
             break;
 
         }
-        System.out.println("잔액:"+lastPrice);
+        System.out.println("잔액:"+(choice-price[num-1]));
 
 
         while (true) {
